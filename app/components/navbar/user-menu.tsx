@@ -10,7 +10,7 @@ const UserMenu = () => {
       <div className="flex items-center gap-3">
         <div
           onClick={() => {}}
-          className="hidden md:block text-sm font-semibold py-3 px-4 rounded-full hover:bg-neutral-100 transition cursor-pointer"
+          className="hidden md:block text-sm font-medium py-3 px-4 rounded-full hover:bg-neutral-100 transition cursor-pointer"
         >
           Rent your Home
         </div>
