@@ -6,7 +6,11 @@ interface MenuItemProps {
 }
 
 const MenuItem = ({ onClick, label }: MenuItemProps) => {
-  return <div></div>;
+  return (
+    <div className="px-4 py-3 hover:bg-neutral-100 transition font-medium">
+      {label}
+    </div>
+  );
 };
 
 export default MenuItem;
