@@ -1,10 +1,17 @@
 "use client";
 
 import Avatar from "@/app/components/avatar";
+import { useCallback, useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
-import { RxAvatar } from "react-icons/rx";
 
 const UserMenu = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleOpen = useCallback(() => {
+    setIsOpen((currentValue) => !currentValue);
+  }, []);
+  // Is useCallback necessary in the above since an empty dependency array is supplied ? ( Answer in the ChatGPT link below) 
+  // https://chat.openai.com/share/2c97eed0-fada-49bf-ae27-4fbf3fa212a0  
   return (
     <div className="relative">
       <div className="flex items-center gap-3">
