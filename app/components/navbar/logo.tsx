@@ -7,8 +7,8 @@ const Logo = () => {
     <Image
       alt="logo"
       className="hidden md:block cursor-pointer"
-      height="120"
-      width="120"
+      height="130"
+      width="130"
       src="/images/logo-transp.svg"
     />
   );
