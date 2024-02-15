@@ -8,6 +8,9 @@ const Search = () => {
         <div className="hidden sm:block text-sm font-semibold px-6 border-x-[1px] flex-1 text-center">
           When
         </div>
+        <div className="text-sm pl-6 pr-2 text-gray-600 flex items-center gap-3">
+          <div className="hidden sm:block">Add Guests</div>
+        </div>
       </div>
     </div>
   );
