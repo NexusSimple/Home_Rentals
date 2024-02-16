@@ -17,7 +17,15 @@ const Button = ({
   small,
   icon,
 }: ButtonProps) => {
-  return <button></button>;
+  return (
+    <button
+      className={`relative disabled:opacity-70 disabled:cursor-not-allowed rounded-lg hover:opacity-80 transition w-full ${
+        outline ? "bg-white" : "bg-primary"
+      }`}
+    >
+      {label}
+    </button>
+  );
 };
 
 export default Button;
