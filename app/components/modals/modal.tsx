@@ -1,3 +1,7 @@
+"use client";
+
+import { useCallback, useEffect, useState } from "react";
+
 interface ModalProps {
   isOpen?: boolean;
   onClose: () => void;
@@ -23,6 +27,24 @@ const Modal = ({
   secondaryAction,
   secondaryLabel,
 }: ModalProps) => {
+  const [showModal, setShowModal] = useState(isOpen);
+
+  useEffect(() => {
+    setShowModal(isOpen);
+  }, [isOpen]);
+
+  const handleClose = useCallback(() => {
+    if (disabled) {
+      return; // If the modal is disabled, just break the function and not allow anything to happen once we click the close button.
+    }
+
+    // Otherwise
+    setShowModal(false);
+    setTimeout(() => {
+      onClose();
+    }, 300);
+  }, [disabled, onClose]);
+
   return <div>Modal</div>;
 };
 
