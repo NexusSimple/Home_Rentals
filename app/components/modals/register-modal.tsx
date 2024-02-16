@@ -23,9 +23,10 @@ const RegisterModal = () => {
     },
   });
 
-  const onSubmit: SubmitHandler<FieldValues> = (data) => {
+  const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     setIsLoading(true);
-    axios.post(`/api/register`, data);
+    await axios.post(`/api/register`, data);
+    registerModal.onClose();
   };
   return <div></div>;
 };
