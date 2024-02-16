@@ -86,6 +86,8 @@ const Modal = ({
                 </button>
                 <div className="text-lg font-semibold">{title}</div>
               </div>
+              {/* BODY */}
+              <div className="relative p-6 flex-auto">{body}</div>
             </div>
           </div>
         </div>
