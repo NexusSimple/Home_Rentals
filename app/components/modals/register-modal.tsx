@@ -1,8 +1,9 @@
 "use client";
 
 import useRegisterModal from "@/app/hooks/useRegisterModal";
+import axios from "axios";
 import { useState } from "react";
-import { FieldValues, useForm } from "react-hook-form";
+import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 
 const RegisterModal = () => {
   // Get the state from the Register Store
@@ -21,6 +22,11 @@ const RegisterModal = () => {
       password: "",
     },
   });
+
+  const onSubmit: SubmitHandler<FieldValues> = (data) => {
+    setIsLoading(true);
+    axios.post(`/api/register`, data);
+  };
   return <div></div>;
 };
 
