@@ -88,6 +88,10 @@ const Modal = ({
               </div>
               {/* BODY */}
               <div className="relative p-6 flex-auto">{body}</div>
+              {/* FOOTER */}
+              <div className="flex flex-col gap-2 p-6">
+                <div className="flex items-center gap-4 w-full"></div>
+              </div>
             </div>
           </div>
         </div>
