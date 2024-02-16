@@ -2,14 +2,14 @@
 
 import Avatar from "@/app/components/avatar";
 import MenuItem from "@/app/components/navbar/menu-item";
-import useRegisterModal from "@/app/hooks/useRegisterModal";
+import useRegisterModalStore from "@/app/hooks/useRegisterModalStore";
 import { useCallback, useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 
 const UserMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const registerModalStore = useRegisterModal();
+  const registerModalStore = useRegisterModalStore();
 
   const toggleOpen = useCallback(() => {
     setIsOpen((currentValue) => !currentValue);
