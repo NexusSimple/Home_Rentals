@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/app/components/navbar/navbar";
+import Modal from "@/app/components/modals/modal";
 
 const font = Plus_Jakarta_Sans({ subsets: ["latin"], weight: "500" });
 
@@ -18,6 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
+        <Modal />
         <Navbar />
         {children}
       </body>
