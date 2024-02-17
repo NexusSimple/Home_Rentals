@@ -1,5 +1,6 @@
 "use client";
 
+import Heading from "@/app/components/heading";
 import Modal from "@/app/components/modals/modal";
 import useRegisterModalStore from "@/app/hooks/useRegisterModalStore";
 import axios from "axios";
@@ -36,7 +37,11 @@ const RegisterModal = () => {
     }
   };
 
-  const bodyContent = <div className="flex flex-col gap-4"></div>;
+  const bodyContent = (
+    <div className="flex flex-col gap-4">
+      <Heading />
+    </div>
+  );
   return (
     <Modal
       disabled={isLoading}
