@@ -1,6 +1,7 @@
 "use client";
 
 import Heading from "@/app/components/heading";
+import Input from "@/app/components/inputs/input";
 import Modal from "@/app/components/modals/modal";
 import useRegisterModalStore from "@/app/hooks/useRegisterModalStore";
 import axios from "axios";
@@ -39,7 +40,12 @@ const RegisterModal = () => {
 
   const bodyContent = (
     <div className="flex flex-col gap-4">
-      <Heading title="Welcome to StayHive" subtitle="Create an account!" center />
+      <Heading
+        title="Welcome to StayHive"
+        subtitle="Create an account!"
+        center
+      />
+      <Input />
     </div>
   );
   return (
