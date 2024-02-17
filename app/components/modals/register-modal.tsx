@@ -35,6 +35,8 @@ const RegisterModal = () => {
       setIsLoading(false);
     }
   };
+
+  const bodyContent = <div className="flex flex-col gap-4"></div>;
   return (
     <Modal
       disabled={isLoading}
@@ -43,6 +45,7 @@ const RegisterModal = () => {
       actionLabel="Continue"
       onClose={registerModalStore.onClose}
       onSubmit={handleSubmit(onSubmit)}
+      body={bodyContent}
     />
   );
 };
