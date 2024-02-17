@@ -9,6 +9,7 @@ import axios from "axios";
 import { useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import toast from "react-hot-toast";
+import { AiFillGithub } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
 
 const RegisterModal = () => {
@@ -84,6 +85,12 @@ const RegisterModal = () => {
         outline
         label="Continue with Google"
         icon={FcGoogle}
+        onClick={() => {}}
+      />
+      <Button
+        outline
+        label="Continue with GitHub"
+        icon={AiFillGithub}
         onClick={() => {}}
       />
     </div>
