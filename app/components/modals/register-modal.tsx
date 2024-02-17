@@ -1,5 +1,6 @@
 "use client";
 
+import Button from "@/app/components/button";
 import Heading from "@/app/components/heading";
 import Input from "@/app/components/inputs/input";
 import Modal from "@/app/components/modals/modal";
@@ -8,6 +9,7 @@ import axios from "axios";
 import { useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import toast from "react-hot-toast";
+import { FcGoogle } from "react-icons/fc";
 
 const RegisterModal = () => {
   // Get the state from the Register Store
@@ -71,6 +73,18 @@ const RegisterModal = () => {
         register={register}
         errors={errors}
         required
+      />
+    </div>
+  );
+
+  const footerContent = (
+    <div className="flex flex-col gap-4 mt-3">
+      <hr />
+      <Button
+        outline
+        label="Continue with Google"
+        icon={FcGoogle}
+        onClick={() => {}}
       />
     </div>
   );
