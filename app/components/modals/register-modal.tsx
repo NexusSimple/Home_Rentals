@@ -7,6 +7,7 @@ import useRegisterModalStore from "@/app/hooks/useRegisterModalStore";
 import axios from "axios";
 import { useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 
 const RegisterModal = () => {
   // Get the state from the Register Store
@@ -31,8 +32,8 @@ const RegisterModal = () => {
       setIsLoading(true);
       await axios.post(`/api/register`, data);
       registerModalStore.onClose();
-    } catch (error) {
-      console.log("[REGISTER_MODAL]", error);
+    } catch {
+      toast.error("Something went wrong");
     } finally {
       setIsLoading(false);
     }
