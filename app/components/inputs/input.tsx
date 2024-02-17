@@ -40,8 +40,8 @@ const Input = ({
         type={type}
         className={`peer w-full p-4 pt-6 font-light bg-white border-2 rounded-md outline-none transition disabled:opacity-70 disabled:cursor-not-allowed 
         ${formatPrice ? "pl-9" : "pl-4"} 
-        ${errors[id] ? "border-primary" : "border-neutral-300"}
-        ${errors[id] ? "focus:border-primary" : "focus:border-black"}
+        ${errors[id] ? "border-red-500" : "border-neutral-300"}
+        ${errors[id] ? "focus:border-red-500" : "focus:border-black"}
         `}
       />
       <label
@@ -51,7 +51,7 @@ const Input = ({
         peer-placeholder-shown:translate-y-0
         peer-focus:scale-75
         peer-focus:-translate-y-4
-        ${errors[id] ? "text-primary" : "text-zinc-400"}
+        ${errors[id] ? "text-red-500" : "text-zinc-400"}
         `}
       >
         {label}
