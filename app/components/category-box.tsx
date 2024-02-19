@@ -24,6 +24,10 @@ const CategoryBox = ({
     if (searchParams) {
       currentQuery = qs.parse(searchParams.toString());
     }
+    const updatedQuery: any = {
+      ...currentQuery,
+      category: label,
+    };
   }, []);
   return (
     <div
