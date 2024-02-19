@@ -54,7 +54,7 @@ export const authOptions: AuthOptions = {
     }),
   ],
   pages: {
-    signIn: "/",
+    signIn: "/", // Whenever any error happens or weird type of callbacks, it is going to redirect to the Homepage.
   },
   debug: process.env.NODE_ENV === "development",
   session: {
