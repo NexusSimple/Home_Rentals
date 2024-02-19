@@ -1,4 +1,4 @@
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { IconType } from "react-icons";
 
 interface CategoryBoxProps {
@@ -15,6 +15,7 @@ const CategoryBox = ({
   selected,
 }: CategoryBoxProps) => {
   const router = useRouter();
+  const searchParams = useSearchParams();
   return (
     <div
       className={`flex flex-col items-center justify-center gap-2 p-3 border-b-2 hover:text-neutral-800 transition cursor-pointer 
