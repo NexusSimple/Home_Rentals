@@ -10,6 +10,8 @@ const Logo = () => {
       height="130"
       width="130"
       src="/images/logo-transp.svg"
+      priority
+      style={{ width: "130px", height: "130px" }}
     />
   );
 };
