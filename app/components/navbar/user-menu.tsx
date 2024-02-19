@@ -2,6 +2,7 @@
 
 import Avatar from "@/app/components/avatar";
 import MenuItem from "@/app/components/navbar/menu-item";
+import useLoginModalStore from "@/app/hooks/useLoginModalStore";
 import useRegisterModalStore from "@/app/hooks/useRegisterModalStore";
 import { useCallback, useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
@@ -10,6 +11,7 @@ const UserMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const registerModalStore = useRegisterModalStore();
+  const loginModalStore = useLoginModalStore();
 
   const toggleOpen = useCallback(() => {
     setIsOpen((currentValue) => !currentValue);
@@ -40,7 +42,7 @@ const UserMenu = () => {
         <div className="absolute right-0 top-12 rounded-xl shadow-md w-[40vw] md:w-3/4 bg-white overflow-hidden text-sm">
           <div className="flex flex-col cursor-pointer">
             <>
-              <MenuItem onClick={() => {}} label="Login" />
+              <MenuItem onClick={loginModalStore.onOpen} label="Login" />
               <MenuItem onClick={registerModalStore.onOpen} label="Sign up" />
             </>
           </div>

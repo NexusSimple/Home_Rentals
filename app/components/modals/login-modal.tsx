@@ -4,6 +4,7 @@ import Button from "@/app/components/button";
 import Heading from "@/app/components/heading";
 import Input from "@/app/components/inputs/input";
 import Modal from "@/app/components/modals/modal";
+import useLoginModalStore from "@/app/hooks/useLoginModalStore";
 import useRegisterModalStore from "@/app/hooks/useRegisterModalStore";
 import axios from "axios";
 import { useState } from "react";
@@ -15,6 +16,8 @@ import { FcGoogle } from "react-icons/fc";
 const LoginModal = () => {
   // Get the state from the Register Store
   const registerModalStore = useRegisterModalStore();
+
+  const loginModalStore = useLoginModalStore();
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -109,10 +112,10 @@ const LoginModal = () => {
   return (
     <Modal
       disabled={isLoading}
-      isOpen={registerModalStore.isOpen}
+      isOpen={loginModalStore.isOpen}
       title="Sign Up"
       actionLabel="Continue"
-      onClose={registerModalStore.onClose}
+      onClose={loginModalStore.onClose}
       onSubmit={handleSubmit(onSubmit)}
       body={bodyContent}
       footer={footerContent}
