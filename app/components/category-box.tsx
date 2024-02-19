@@ -19,7 +19,10 @@ const CategoryBox = ({
       ${selected ? "border-b-neutral-800" : "border-transparent"}
       ${selected ? "text-neutral-800" : "text-neutral-500"}
       `}
-    ></div>
+    >
+      <Icon size={26} />
+      <div className="font-medium text-sm">{label}</div>
+    </div>
   );
 };
 
