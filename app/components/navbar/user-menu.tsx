@@ -50,6 +50,11 @@ const UserMenu = ({ currentUser }: UserMenuProps) => {
               <>
                 <MenuItem onClick={() => {}} label="My Trips" />
                 <MenuItem onClick={() => {}} label="My Favourites" />
+                <MenuItem onClick={() => {}} label="My Reservations" />
+                <MenuItem onClick={() => {}} label="My Properties" />
+                <MenuItem onClick={() => {}} label="Rent my Home" />
+                <hr />
+                <MenuItem onClick={() => {}} label="Log Out" />
               </>
             ) : (
               <>
