@@ -5,6 +5,7 @@ import MenuItem from "@/app/components/navbar/menu-item";
 import useLoginModalStore from "@/app/hooks/useLoginModalStore";
 import useRegisterModalStore from "@/app/hooks/useRegisterModalStore";
 import { User } from "@prisma/client";
+import { signOut } from "next-auth/react";
 import { useCallback, useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 
@@ -54,7 +55,12 @@ const UserMenu = ({ currentUser }: UserMenuProps) => {
                 <MenuItem onClick={() => {}} label="My Properties" />
                 <MenuItem onClick={() => {}} label="Rent my Home" />
                 <hr />
-                <MenuItem onClick={() => {}} label="Log Out" />
+                <MenuItem
+                  onClick={() => {
+                    signOut();
+                  }}
+                  label="Log Out"
+                />
               </>
             ) : (
               <>
