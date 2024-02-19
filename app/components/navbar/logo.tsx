@@ -7,11 +7,10 @@ const Logo = () => {
     <Image
       alt="logo"
       className="hidden md:block cursor-pointer"
-      height="130"
-      width="130"
       src="/images/logo-transp.svg"
       priority
-      style={{ width: "130px", height: "130px" }}
+      width={130}
+      height={130}
     />
   );
 };
