@@ -1,3 +1,4 @@
+import CategoryBox from "@/app/components/category-box";
 import Container from "@/app/components/container";
 import { GiWindmill } from "react-icons/gi";
 import { MdOutlineVilla } from "react-icons/md";
