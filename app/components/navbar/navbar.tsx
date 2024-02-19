@@ -21,6 +21,7 @@ const Navbar = ({ currentUser }: NavbarProps) => {
           </div>
         </Container>
       </div>
+      <Categories
     </div>
   );
 };
