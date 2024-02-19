@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/app/components/navbar/navbar";
 import RegisterModal from "@/app/components/modals/register-modal";
 import ToasterProvider from "@/app/providers/toaster-provider";
+import LoginModal from "@/app/components/modals/login-modal";
 
 const font = Plus_Jakarta_Sans({ subsets: ["latin"], weight: "500" });
 
@@ -21,6 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={font.className}>
         <ToasterProvider />
+        <LoginModal />
         <RegisterModal />
         <Navbar />
         {children}
