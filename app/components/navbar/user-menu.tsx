@@ -4,10 +4,15 @@ import Avatar from "@/app/components/avatar";
 import MenuItem from "@/app/components/navbar/menu-item";
 import useLoginModalStore from "@/app/hooks/useLoginModalStore";
 import useRegisterModalStore from "@/app/hooks/useRegisterModalStore";
+import { User } from "@prisma/client";
 import { useCallback, useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 
-const UserMenu = () => {
+interface UserMenuProps{
+  currentUser?: User | null;
+}
+
+const UserMenu = ({currentUser}: UserMenuProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const registerModalStore = useRegisterModalStore();
