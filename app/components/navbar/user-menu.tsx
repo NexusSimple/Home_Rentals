@@ -8,11 +8,11 @@ import { User } from "@prisma/client";
 import { useCallback, useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 
-interface UserMenuProps{
+interface UserMenuProps {
   currentUser?: User | null;
 }
 
-const UserMenu = ({currentUser}: UserMenuProps) => {
+const UserMenu = ({ currentUser }: UserMenuProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const registerModalStore = useRegisterModalStore();
@@ -46,10 +46,17 @@ const UserMenu = ({currentUser}: UserMenuProps) => {
       {isOpen && (
         <div className="absolute right-0 top-12 rounded-xl shadow-md w-[40vw] md:w-3/4 bg-white overflow-hidden text-sm">
           <div className="flex flex-col cursor-pointer">
-            <>
-              <MenuItem onClick={loginModalStore.onOpen} label="Login" />
-              <MenuItem onClick={registerModalStore.onOpen} label="Sign up" />
-            </>
+            {currentUser ? (
+              <>
+                <MenuItem onClick={() => {}} label="My Trips" />
+                <MenuItem onClick={() => {}} label="My Favourites" />
+              </>
+            ) : (
+              <>
+                <MenuItem onClick={loginModalStore.onOpen} label="Login" />
+                <MenuItem onClick={registerModalStore.onOpen} label="Sign up" />
+              </>
+            )}
           </div>
         </div>
       )}
