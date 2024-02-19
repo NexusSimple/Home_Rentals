@@ -1,5 +1,6 @@
 import Container from "@/app/components/container";
 import { GiWindmill } from "react-icons/gi";
+import { MdOutlineVilla } from "react-icons/md";
 import { TbBeach } from "react-icons/tb";
 
 export const categories = [
@@ -12,6 +13,11 @@ export const categories = [
     label: "Windmills",
     icon: GiWindmill,
     description: "This property has windmills!",
+  },
+  {
+    label: "Modern",
+    icon: MdOutlineVilla,
+    description: "This property is modern!",
   },
 ];
 
