@@ -2,6 +2,7 @@
 
 import Modal from "@/app/components/modals/modal";
 import useRentModalStore from "@/app/hooks/useRentModalStore";
+import { useState } from "react";
 
 enum STEPS {
   CATEGORY = 0,
@@ -14,6 +15,8 @@ enum STEPS {
 
 const RentModal = () => {
   const rentModalStore = useRentModalStore();
+
+  const [step, setStep] = useState(STEPS.CATEGORY);
   return (
     <Modal
       title="Rent out your home!"
