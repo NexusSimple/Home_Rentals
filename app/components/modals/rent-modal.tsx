@@ -61,6 +61,7 @@ const RentModal = () => {
       actionLabel={actionLabel}
       secondaryActionLabel={secondaryActionLabel}
       secondaryAction={step === STEPS.CATEGORY ? undefined : onBack}
+      body={bodyContent}
     />
   );
 };
