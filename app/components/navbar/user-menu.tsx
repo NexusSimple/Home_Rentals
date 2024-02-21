@@ -24,6 +24,13 @@ const UserMenu = ({ currentUser }: UserMenuProps) => {
   }, []);
   // Is useCallback necessary in the above since an empty dependency array is supplied ? ( Answer in the ChatGPT link below)
   // https://chat.openai.com/share/2c97eed0-fada-49bf-ae27-4fbf3fa212a0
+
+  const handleRentOut = useCallback(() => {
+    if (!currentUser) {
+      return loginModalStore.onOpen();
+    }
+    // Open RentOut Model
+  }, [currentUser, loginModalStore]);
   return (
     <div className="relative">
       <div className="flex items-center gap-3">
