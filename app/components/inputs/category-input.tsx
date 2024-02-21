@@ -1,6 +1,20 @@
 "use client";
 
-const CategoryInput = () => {
+import { IconType } from "react-icons";
+
+interface CategoryInputProps {
+  icon: IconType;
+  label: string;
+  selected?: boolean;
+  onClick: (value: string) => void;
+}
+
+const CategoryInput = ({
+  icon: Icon,
+  label,
+  selected,
+  onClick,
+}: CategoryInputProps) => {
   return <div>CategoryInput</div>;
 };
 
