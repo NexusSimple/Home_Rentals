@@ -1,3 +1,5 @@
+"use client";
+
 import CategoryBox from "@/app/components/category-box";
 import Container from "@/app/components/container";
 import { usePathname, useSearchParams } from "next/navigation";
