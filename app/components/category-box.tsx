@@ -28,6 +28,11 @@ const CategoryBox = ({
       ...currentQuery,
       category: label,
     };
+
+    // If the category the user clicks on, has already been selected in the URL, that means we want to delete that category from the searchParams ( i.e. from the newest query )
+    if (searchParams?.get("category") === label) {
+      delete updatedQuery.category;
+    }
   }, []);
   return (
     <div
