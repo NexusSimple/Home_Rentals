@@ -1,5 +1,6 @@
 "use client";
 
+import Heading from "@/app/components/heading";
 import Modal from "@/app/components/modals/modal";
 import useRentModalStore from "@/app/hooks/useRentModalStore";
 import { useMemo, useState } from "react";
@@ -43,7 +44,14 @@ const RentModal = () => {
   }, [step]);
 
   // Dynamic bodyContent so let instead of const
-  let bodyContent = <div className="flex flex-col gap-8"></div>;
+  let bodyContent = (
+    <div className="flex flex-col gap-8">
+      <Heading
+        title="Which of these best describes your place?"
+        subtitle="Pick a category"
+      />
+    </div>
+  );
   return (
     <Modal
       title="Rent out your home!"
