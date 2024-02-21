@@ -34,6 +34,14 @@ const RentModal = () => {
     return "Next";
   }, [step]);
 
+  const secondaryActionLabel = useMemo(() => {
+    // If the user is on the first step
+    if (step === STEPS.CATEGORY) {
+      return undefined;
+    }
+    return "Back";
+  }, [step]);
+
   return (
     <Modal
       title="Rent out your home!"
