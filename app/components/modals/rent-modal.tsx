@@ -42,6 +42,8 @@ const RentModal = () => {
     return "Back";
   }, [step]);
 
+  // Dynamic bodyContent so let instead of const
+  let bodyContent = <div className="flex flex-col gap-8"></div>;
   return (
     <Modal
       title="Rent out your home!"
