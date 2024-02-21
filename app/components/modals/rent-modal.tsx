@@ -21,6 +21,10 @@ const RentModal = () => {
   const onBack = () => {
     setStep((currentValue) => currentValue - 1);
   };
+
+  const onNext = () => {
+    setStep((currentValue) => currentValue + 1);
+  };
   return (
     <Modal
       title="Rent out your home!"
