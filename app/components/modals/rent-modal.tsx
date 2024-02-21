@@ -48,7 +48,9 @@ const RentModal = () => {
       isOpen={rentModalStore.isOpen}
       onClose={rentModalStore.onClose}
       onSubmit={() => {}}
-      actionLabel="Submit"
+      actionLabel={actionLabel}
+      secondaryActionLabel={secondaryActionLabel}
+      secondaryAction={step === STEPS.CATEGORY ? undefined : onBack}
     />
   );
 };
