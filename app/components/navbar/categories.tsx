@@ -1,5 +1,6 @@
 import CategoryBox from "@/app/components/category-box";
 import Container from "@/app/components/container";
+import { usePathname, useSearchParams } from "next/navigation";
 import { GiWindmill } from "react-icons/gi";
 import { MdOutlineVilla } from "react-icons/md";
 import { TbBeach } from "react-icons/tb";
@@ -23,15 +24,27 @@ export const categories = [
 ];
 
 const Categories = () => {
+  const searchParams = useSearchParams();
+
+  const category = searchParams?.get("category");
+
+  const pathname = usePathname();
+
+  const isHomePage = pathname === "/";
+
+  if (!isHomePage) {
+    return null;
+  }
+
   return (
     <Container>
       <div className="pt-4 flex items-center justify-between overflow-x-auto">
-        {categories.map((category) => (
+        {categories.map((item) => (
           <CategoryBox
-            key={category.label}
-            label={category.label}
-            description={category.description}
-            icon={category.icon}
+            key={item.label}
+            label={item.label}
+            selected={category === item.label}
+            icon={item.icon}
           />
         ))}
       </div>
