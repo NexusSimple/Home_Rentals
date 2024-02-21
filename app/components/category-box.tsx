@@ -33,6 +33,14 @@ const CategoryBox = ({
     if (searchParams?.get("category") === label) {
       delete updatedQuery.category;
     }
+
+    const url = qs.stringifyUrl(
+      {
+        url: "/",
+        query: updatedQuery,
+      },
+      { skipNull: true }
+    );
   }, []);
   return (
     <div
