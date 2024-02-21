@@ -50,6 +50,7 @@ const RentModal = () => {
   const bathroomCount = watch("bathroomCount");
   const imageSrc = watch("imageSrc");
 
+  // Wrapping setValue of rhf inside a function because setValue by default doesn't re-render the page after setting the value
   const setCustomValue = (id: string, value: any) => {
     setValue(id, value, {
       shouldDirty: true,
