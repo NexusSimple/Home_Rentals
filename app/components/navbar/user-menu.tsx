@@ -4,6 +4,7 @@ import Avatar from "@/app/components/avatar";
 import MenuItem from "@/app/components/navbar/menu-item";
 import useLoginModalStore from "@/app/hooks/useLoginModalStore";
 import useRegisterModalStore from "@/app/hooks/useRegisterModalStore";
+import useRentModalStore from "@/app/hooks/useRentModalStore";
 import { User } from "@prisma/client";
 import { signOut } from "next-auth/react";
 import { useCallback, useState } from "react";
@@ -18,6 +19,7 @@ const UserMenu = ({ currentUser }: UserMenuProps) => {
 
   const registerModalStore = useRegisterModalStore();
   const loginModalStore = useLoginModalStore();
+  const rentModalStore = useRentModalStore();
 
   const toggleOpen = useCallback(() => {
     setIsOpen((currentValue) => !currentValue);
@@ -30,7 +32,8 @@ const UserMenu = ({ currentUser }: UserMenuProps) => {
       return loginModalStore.onOpen();
     }
     // Open RentOut Model
-  }, [currentUser, loginModalStore]);
+    rentModalStore.onOpen();
+  }, [currentUser, loginModalStore, rentModalStore]);
   return (
     <div className="relative">
       <div className="flex items-center gap-3">
