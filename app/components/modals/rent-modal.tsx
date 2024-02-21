@@ -1,7 +1,9 @@
 "use client";
 
 import Heading from "@/app/components/heading";
+import CategoryInput from "@/app/components/inputs/category-input";
 import Modal from "@/app/components/modals/modal";
+import { categories } from "@/app/components/navbar/categories";
 import useRentModalStore from "@/app/hooks/useRentModalStore";
 import { useMemo, useState } from "react";
 
@@ -59,7 +61,14 @@ const RentModal = () => {
           max-h-[50vh]
           overflow-y-auto
         "
-      ></div>
+      >
+        {categories.map((item) => (
+          <div key={item.label} className="col-span-1">
+            <CategoryInput
+            />
+          </div>
+        ))}
+      </div>
     </div>
   );
   return (
