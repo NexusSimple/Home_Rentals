@@ -41,6 +41,8 @@ const CategoryBox = ({
       },
       { skipNull: true } // skips key query with null as the value , say Windmills=null, i.e. not selected categories are skipped in the query.
     );
+
+    router.push(url);
   }, []);
   return (
     <div
