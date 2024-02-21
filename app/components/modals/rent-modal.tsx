@@ -17,6 +17,10 @@ const RentModal = () => {
   const rentModalStore = useRentModalStore();
 
   const [step, setStep] = useState(STEPS.CATEGORY);
+
+  const onBack = () => {
+    setStep((currentValue) => currentValue - 1);
+  };
   return (
     <Modal
       title="Rent out your home!"
