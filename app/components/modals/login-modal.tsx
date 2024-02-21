@@ -7,7 +7,7 @@ import Modal from "@/app/components/modals/modal";
 import useLoginModalStore from "@/app/hooks/useLoginModalStore";
 import useRegisterModalStore from "@/app/hooks/useRegisterModalStore";
 import axios from "axios";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { AiFillGithub } from "react-icons/ai";
@@ -51,6 +51,11 @@ const LoginModal = () => {
       }
     });
   };
+
+  const toggle = useCallback(() => {
+    loginModalStore.onClose();
+    registerModalStore.onOpen();
+  }, [loginModalStore, registerModalStore]);
 
   const bodyContent = (
     <div className="flex flex-col gap-4">
@@ -99,7 +104,7 @@ const LoginModal = () => {
         <div className="flex items-center justify-center gap-2">
           <div>First time using StayHive?</div>
           <div
-            onClick={registerModalStore.onClose}
+            onClick={toggle}
             className="text-neutral-800 cursor-pointer hover:underline"
           >
             Create an account!
