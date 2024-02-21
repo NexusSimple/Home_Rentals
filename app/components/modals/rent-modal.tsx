@@ -106,6 +106,7 @@ const RentModal = () => {
               onClick={(category) => {
                 setCustomValue("category", category);
               }}
+              // This onClick handler which is the callback , is responsible for setting the input field of "category" to the passed parameter value of the callback which is the label property of each category object.... As this label property of each category object is passed to the "label" prop of CategoryInput component here and that value of label prop is passed as the argument to the onClick handler callback's onClick prop invokation, which is received here in this onClick prop's handler as category parameter
               selected={category === item.label}
               label={item.label}
               icon={item.icon}
