@@ -1,3 +1,5 @@
+"use client";
+
 import Modal from "@/app/components/modals/modal";
 import useRentModalStore from "@/app/hooks/useRentModalStore";
 
