@@ -6,6 +6,7 @@ import RegisterModal from "@/app/components/modals/register-modal";
 import ToasterProvider from "@/app/providers/toaster-provider";
 import LoginModal from "@/app/components/modals/login-modal";
 import getCurrentUser from "@/app/actions/getCurrentUser";
+import RentModal from "@/app/components/modals/rent-modal";
 
 const font = Plus_Jakarta_Sans({ subsets: ["latin"], weight: "500" });
 
@@ -24,6 +25,7 @@ export default async function RootLayout({
     <html lang="en">
       <body className={font.className}>
         <ToasterProvider />
+        <RentModal />
         <LoginModal />
         <RegisterModal />
         <Navbar currentUser={currentUser} />
