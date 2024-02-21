@@ -108,6 +108,7 @@ const RentModal = () => {
               }}
               // This onClick handler which is the callback , is responsible for setting the input field of "category" to the passed parameter value of the callback which is the label property of each category object.... As this label property of each category object is passed to the "label" prop of CategoryInput component here and that value of label prop is passed as the argument to the onClick handler callback's onClick prop invokation, which is received here in this onClick prop's handler as category parameter
               selected={category === item.label}
+              // When the user clicks on a category , first the onClick prop handler callback above sets the value of the "category" input field to the label of the clicked category (as explained in the above comment). And that set value is stored in the "category" const variable which is holding the value of the watched input field "category"... Now on mapping through the categories array , whichever category object's label property's value is the same as the set value of the "category" input field, only that category object will be selected.
               label={item.label}
               icon={item.icon}
             />
