@@ -63,7 +63,10 @@ const UserMenu = ({ currentUser }: UserMenuProps) => {
                 <MenuItem onClick={() => {}} label="My Favourites" />
                 <MenuItem onClick={() => {}} label="My Reservations" />
                 <MenuItem onClick={() => {}} label="My Properties" />
-                <MenuItem onClick={() => {}} label="Rent my Home" />
+                <MenuItem
+                  onClick={rentModalStore.onOpen}
+                  label="Rent my Home"
+                />
                 <hr />
                 <MenuItem
                   onClick={() => {
