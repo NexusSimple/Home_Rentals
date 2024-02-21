@@ -2,7 +2,7 @@
 
 import Modal from "@/app/components/modals/modal";
 import useRentModalStore from "@/app/hooks/useRentModalStore";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 enum STEPS {
   CATEGORY = 0,
@@ -25,6 +25,15 @@ const RentModal = () => {
   const onNext = () => {
     setStep((currentValue) => currentValue + 1);
   };
+
+  const actionLabel = useMemo(() => {
+    // If the user is on the last step
+    if (step === STEPS.PRICE) {
+      return "Create";
+    }
+    return "Next";
+  }, [step]);
+
   return (
     <Modal
       title="Rent out your home!"
