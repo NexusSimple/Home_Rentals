@@ -1,5 +1,7 @@
 "use client";
 
+import useCountries from "@/app/hooks/useCountries";
+
 export type CountrySelectValue = {
   flag: string;
   label: string;
@@ -14,6 +16,8 @@ interface CountrySelectProps {
 }
 
 const CountrySelect = ({ value, onChange }: CountrySelectProps) => {
+
+  const { getAll } = useCountries();
   return <div>CountrySelect</div>;
 };
 
