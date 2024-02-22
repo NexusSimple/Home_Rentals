@@ -2,6 +2,7 @@
 
 import Heading from "@/app/components/heading";
 import CategoryInput from "@/app/components/inputs/category-input";
+import CountrySelect from "@/app/components/inputs/country-select";
 import Modal from "@/app/components/modals/modal";
 import { categories } from "@/app/components/navbar/categories";
 import useRentModalStore from "@/app/hooks/useRentModalStore";
@@ -125,6 +126,7 @@ const RentModal = () => {
           title="Where is your place located?"
           subtitle="Help guests find you!"
         />
+        <CountrySelect />
       </div>
     );
   }
