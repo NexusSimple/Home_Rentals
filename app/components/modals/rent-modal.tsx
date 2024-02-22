@@ -6,6 +6,7 @@ import CountrySelect from "@/app/components/inputs/country-select";
 import Modal from "@/app/components/modals/modal";
 import { categories } from "@/app/components/navbar/categories";
 import useRentModalStore from "@/app/hooks/useRentModalStore";
+import dynamic from "next/dynamic";
 import { useMemo, useState } from "react";
 import { FieldValues, useForm } from "react-hook-form";
 
@@ -50,6 +51,16 @@ const RentModal = () => {
   const roomCount = watch("roomCount");
   const bathroomCount = watch("bathroomCount");
   const imageSrc = watch("imageSrc");
+
+  // Dynamic lazy loading
+  const Map = useMemo(
+    () =>
+      dynamic(() => import("@/app/components/map"), {
+        ssr: false,
+      }),
+    [location]
+  );
+  // Explanation :  https://chat.openai.com/share/c87b9158-436b-4caf-9969-40fa9b014d3b   👈
 
   // Wrapping setValue of rhf inside a function because setValue by default doesn't re-render the page after setting the value
   const setCustomValue = (id: string, value: any) => {
@@ -130,6 +141,7 @@ const RentModal = () => {
           onChange={(value) => setCustomValue("location", value)}
           value={location}
         />
+        <Map center={location?.latlng} />
       </div>
     );
   }
