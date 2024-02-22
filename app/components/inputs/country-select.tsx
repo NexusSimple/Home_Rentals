@@ -2,6 +2,8 @@
 
 import useCountries from "@/app/hooks/useCountries";
 
+import Select from "react-select";
+
 export type CountrySelectValue = {
   flag: string;
   label: string;
@@ -16,9 +18,12 @@ interface CountrySelectProps {
 }
 
 const CountrySelect = ({ value, onChange }: CountrySelectProps) => {
-
   const { getAll } = useCountries();
-  return <div>CountrySelect</div>;
+  return (
+    <div>
+      <Select />
+    </div>
+  );
 };
 
 export default CountrySelect;
