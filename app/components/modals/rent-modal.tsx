@@ -9,9 +9,12 @@ import Input from "@/app/components/inputs/input";
 import Modal from "@/app/components/modals/modal";
 import { categories } from "@/app/components/navbar/categories";
 import useRentModalStore from "@/app/hooks/useRentModalStore";
+import axios from "axios";
 import dynamic from "next/dynamic";
+import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
-import { FieldValues, useForm } from "react-hook-form";
+import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 
 enum STEPS {
   CATEGORY = 0,
@@ -27,6 +30,8 @@ const RentModal = () => {
 
   const [step, setStep] = useState(STEPS.CATEGORY);
   const [isLoading, setIsLoading] = useState(false);
+
+  const router = useRouter();
 
   const {
     register,
@@ -81,6 +86,31 @@ const RentModal = () => {
 
   const onNext = () => {
     setStep((currentValue) => currentValue + 1);
+  };
+
+  const onSubmit: SubmitHandler<FieldValues> = (data) => {
+    // If the user is not on the LAST Step , Invoke the onNext() handler
+    if (step !== STEPS.PRICE) {
+      return onNext();
+    }
+
+    setIsLoading(true);
+
+    axios
+      .post("/api/listings", data)
+      .then(() => {
+        toast.success("Listing created!");
+        router.refresh();
+        reset(); // If the form Submission is successful, reset the entire form
+        setStep(STEPS.CATEGORY); // Reset the step state to the 1st step
+        rentModalStore.onClose(); // Close the Rent Modal
+      })
+      .catch(() => {
+        toast.error("Something went wrong.");
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
 
   const actionLabel = useMemo(() => {
@@ -234,15 +264,15 @@ const RentModal = () => {
         <Input
           id="price"
           label="Price"
-          formatPrice 
-          type="number" 
+          formatPrice
+          type="number"
           disabled={isLoading}
           register={register}
           errors={errors}
           required
         />
       </div>
-    )
+    );
   }
 
   return (
