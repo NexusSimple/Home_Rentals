@@ -4,6 +4,7 @@ import Heading from "@/app/components/heading";
 import Counter from "@/app/components/inputs/Counter";
 import CategoryInput from "@/app/components/inputs/category-input";
 import CountrySelect from "@/app/components/inputs/country-select";
+import ImageUpload from "@/app/components/inputs/image-upload";
 import Modal from "@/app/components/modals/modal";
 import { categories } from "@/app/components/navbar/categories";
 import useRentModalStore from "@/app/hooks/useRentModalStore";
@@ -185,10 +186,10 @@ const RentModal = () => {
           title="Add a photo of your place"
           subtitle="Show guests what your place looks like!"
         />
+        <ImageUpload />
       </div>
-    )
+    );
   }
-
 
   return (
     <Modal
