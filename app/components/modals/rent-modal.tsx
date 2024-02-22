@@ -1,6 +1,7 @@
 "use client";
 
 import Heading from "@/app/components/heading";
+import Counter from "@/app/components/inputs/Counter";
 import CategoryInput from "@/app/components/inputs/category-input";
 import CountrySelect from "@/app/components/inputs/country-select";
 import Modal from "@/app/components/modals/modal";
@@ -152,6 +153,12 @@ const RentModal = () => {
         <Heading
           title="Share some basics about your place?"
           subtitle="What amenities do you have?"
+        />
+        <Counter
+          title="Guests"
+          subtitle="How many guests do you allow?"
+          value={guestCount}
+          onChange={(value) => setCustomValue("guestCount", value)}
         />
       </div>
     );
