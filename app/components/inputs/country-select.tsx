@@ -8,7 +8,12 @@ export type CountrySelectValue = {
   value: string;
 };
 
-const CountrySelect = () => {
+interface CountrySelectProps {
+  value?: CountrySelectValue;
+  onChange: (value: CountrySelectValue) => void;
+}
+
+const CountrySelect = ({ value, onChange }: CountrySelectProps) => {
   return <div>CountrySelect</div>;
 };
 
