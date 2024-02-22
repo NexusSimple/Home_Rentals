@@ -280,7 +280,7 @@ const RentModal = () => {
       title="Rent out your home!"
       isOpen={rentModalStore.isOpen}
       onClose={rentModalStore.onClose}
-      onSubmit={onNext}
+      onSubmit={handleSubmit(onSubmit)}
       actionLabel={actionLabel}
       secondaryActionLabel={secondaryActionLabel}
       secondaryAction={step === STEPS.CATEGORY ? undefined : onBack}
