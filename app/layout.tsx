@@ -25,9 +25,11 @@ export default async function RootLayout({
     <html lang="en">
       <body className={font.className}>
         <ToasterProvider />
+        {/* 👇 The 3 modals below will only be SHOWN to the user when the respective GLOBAL STATE isOpen is true */}
         <RentModal />
         <LoginModal />
         <RegisterModal />
+        {/* 👇 So in the 1st render in the Client Side the Navbar will be shown */}
         <Navbar currentUser={currentUser} />
         <div className="pb-20 pt-28">{children}</div>
       </body>
