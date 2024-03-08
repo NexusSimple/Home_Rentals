@@ -36,18 +36,18 @@ const UserMenu = ({ currentUser }: UserMenuProps) => {
   }, [currentUser, loginModalStore, rentModalStore]);
   return (
     <div className="relative">
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-0 mr-4 min-[777px]:gap-3 ">
         <div
           onClick={handleRentOut}
-          className="hidden md:block text-sm font-medium py-3 px-4 rounded-full hover:bg-neutral-100 transition cursor-pointer"
+          className="hidden custom940:block text-sm font-medium py-3 px-4 rounded-full hover:bg-neutral-100 transition cursor-pointer whitespace-nowrap"
         >
           Rent your Home
         </div>
         <div
           onClick={toggleOpen}
-          className="p-4 md:py-1 md:px-2 border-[1px] border-neutral-200 flex items-center gap-3 rounded-full cursor-pointer hover:shadow-md transition"
+          className="p-4 md:py-1 md:px-2 border-[1px] border-neutral-200 flex items-center gap-3 rounded-full cursor-pointer hover:shadow-md transition md:w-[78px]"
         >
-          <AiOutlineMenu />
+          <AiOutlineMenu className="w-[17px] h-[17px]" />
           <div className="hidden md:block">
             <Avatar src={currentUser?.image} />
           </div>
@@ -59,10 +59,10 @@ const UserMenu = ({ currentUser }: UserMenuProps) => {
           <div className="flex flex-col cursor-pointer">
             {currentUser ? (
               <>
-                <MenuItem onClick={() => {}} label="My Trips" />
-                <MenuItem onClick={() => {}} label="My Favourites" />
-                <MenuItem onClick={() => {}} label="My Reservations" />
-                <MenuItem onClick={() => {}} label="My Properties" />
+                <MenuItem onClick={() => { }} label="My Trips" />
+                <MenuItem onClick={() => { }} label="My Favourites" />
+                <MenuItem onClick={() => { }} label="My Reservations" />
+                <MenuItem onClick={() => { }} label="My Properties" />
                 <MenuItem
                   onClick={rentModalStore.onOpen}
                   label="Rent my Home"

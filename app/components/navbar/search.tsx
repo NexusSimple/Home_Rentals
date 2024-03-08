@@ -11,8 +11,8 @@ const Search = () => {
           When
         </div>
         <div className="text-sm pl-6 pr-2 text-gray-600 flex items-center gap-3">
-          <div className="hidden sm:block">Add Guests</div>
-          {/* <div className="p-2 bg-primary rounded-full text-white"> */}
+          <div className="hidden sm:block whitespace-nowrap">Add Guests</div>
+
           <div className="p-2 bg-primary rounded-full text-white">
             <BiSearch size={18} />
           </div>

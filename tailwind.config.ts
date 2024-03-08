@@ -11,6 +11,9 @@ const config: Config = {
       colors: {
         primary: "var(--color-primary)",
       },
+      screens: {
+        "custom940": "940px",
+      }
     },
   },
   plugins: [],
