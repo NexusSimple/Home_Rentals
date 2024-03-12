@@ -19,7 +19,7 @@ const Navbar = ({ currentUser }: NavbarProps) => {
 
       {/* 👇 This is the TOP NAVBAR  */}
       <div className="py-4 border-b-[1px]">
-        <Container>
+        <Container>  { /* 👈 This gives "max width", "auto horizontal margin" & "horizontal padding" */}
           <div className="flex items-center justify-between gap-3 md:gap-0">
             <Logo />
             <Search />

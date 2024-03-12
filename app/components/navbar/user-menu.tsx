@@ -27,6 +27,8 @@ const UserMenu = ({ currentUser }: UserMenuProps) => {
   // Is useCallback necessary in the above since an empty dependency array is supplied ? ( Answer in the ChatGPT link below)
   // https://chat.openai.com/share/2c97eed0-fada-49bf-ae27-4fbf3fa212a0
 
+  // 👆 An "empty dependency array" passed to useCallback means that the memoized callback will be created once and will remain the same throughout the component's lifecycle. 
+
   const handleRentOut = useCallback(() => {
     if (!currentUser) {
       return loginModalStore.onOpen();
@@ -45,9 +47,9 @@ const UserMenu = ({ currentUser }: UserMenuProps) => {
         </div>
         <div
           onClick={toggleOpen}
-          className="p-4 md:py-1 md:px-2 border-[1px] border-neutral-200 flex items-center gap-3 rounded-full cursor-pointer hover:shadow-md transition md:w-[78px]"
+          className="p-4 md:py-1 md:px-2 border-[1px] border-neutral-200 flex items-center gap-3 rounded-full cursor-pointer hover:shadow-md transition"
         >
-          <AiOutlineMenu className="w-[17px] h-[17px]" />
+          <AiOutlineMenu />
           <div className="hidden md:block">
             <Avatar src={currentUser?.image} />
           </div>

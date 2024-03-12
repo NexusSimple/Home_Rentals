@@ -118,14 +118,20 @@ const RentModal = () => {
     if (step === STEPS.PRICE) {
       return "Create";
     }
+
+    // For all other steps from the 1st Step to the 2nd last Step 
     return "Next";
   }, [step]);
 
+
+  // secondaryActionLabel   -->   for the Back Button Label
   const secondaryActionLabel = useMemo(() => {
     // If the user is on the first step
     if (step === STEPS.CATEGORY) {
       return undefined;
     }
+
+    // For all other steps from 2nd Step to the Last Step
     return "Back";
   }, [step]);
 
