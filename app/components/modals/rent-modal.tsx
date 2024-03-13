@@ -135,7 +135,8 @@ const RentModal = () => {
     return "Back";
   }, [step]);
 
-  // Dynamic bodyContent so let instead of const
+   // Dynamic bodyContent so let instead of const 
+  //  This is the bodyContent for the 1st STEP i.e. for Category Selection
   let bodyContent = (
     <div className="flex flex-col gap-8">
       <Heading
