@@ -18,12 +18,18 @@ const useFavorite = ({ listingId, currentUser }: IUseFavorite) => {
 
   const loginModal = useLoginModalStore();
 
+
+  // Check the currentUser model's  "favoriteIds" field , which is an array , to see if "listingId" passed to this hook as a parameter is present in it. And return the Boolean value of it ->  if present or not.
   const hasFavorited = useMemo(() => {
     const list = currentUser?.favoriteIds || [];
 
     return list.includes(listingId);
   }, [currentUser, listingId]);
 
+  // If user is not Logged in, open the modal , when the user clicks on the Heart Button.
+  // Else if user is logged in: do either of 2 things
+  // If the lisiting is already present in the currentUser's favorites , Make a DELETE request to delete the listing from the currentUser's favorites.
+  // OR if the listing is not present in the currentUser's favorites, Make a POST reques to add the listing to the currentUser's favorites.
   const toggleFavorite = useCallback(async (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
 
