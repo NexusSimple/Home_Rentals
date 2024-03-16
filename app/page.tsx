@@ -5,18 +5,15 @@ import EmptyState from "@/app/components/empty-state";
 import ListingCard from "@/app/components/listings/listing-card";
 
 interface HomeProps {
-  searchParams: IListingsParams
-};
+  searchParams: IListingsParams;
+}
 
 const Home = async ({ searchParams }: HomeProps) => {
-
   const listings = await getListings(searchParams);
   const currentUser = await getCurrentUser();
 
   if (listings.length === 0) {
-    return (
-      <EmptyState showReset />
-    );
+    return <EmptyState showReset />;
   }
   return (
     <Container>
@@ -33,7 +30,7 @@ const Home = async ({ searchParams }: HomeProps) => {
             gap-8
           "
       >
-        {listings.map((listing: any) => (
+        {listings.map((listing) => (
           <ListingCard
             currentUser={currentUser}
             key={listing.id}
@@ -43,6 +40,6 @@ const Home = async ({ searchParams }: HomeProps) => {
       </div>
     </Container>
   );
-}
+};
 
 export default Home;
